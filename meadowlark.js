@@ -1,28 +1,28 @@
 const Express = require('express')
+const handlebars = require('express3-handlebars').create({ 'defaultLayout': 'main' })
+
 const app = new Express()
 
+app.engine('handlebars', handlebars.engine)
 app.set('port', process.env.port || 3000)
+app.set('view engine', 'handlebars')
 
-app.get('/', (req, res)=> {
-  res.type('text/plain')
-  res.send('欢迎访问草地鹨旅行网')
+app.get('/', (req, res) => {
+  res.render('home')
 })
-app.get('/about',(req,res) => {
-  res.type('text/plain')
-  res.send('这是关于页面')
+app.get('/about', (req, res) => {
+  res.render('about')
 })
 
 app.use((req, res) => {
-  res.type('text/plain')
   res.status(404)
-  res.send('404 - Not Found')
+  res.render('404')
 })
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.type('text/plain')
   res.status(500)
-  res.send('500 - Server Error')
+  res.render('500')
 })
 
 app.listen(app.get('port'), () => {
