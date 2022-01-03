@@ -1,5 +1,6 @@
 const Express = require('express')
 const handlebars = require('express3-handlebars').create({ 'defaultLayout': 'main' })
+const fortune = require('./lib/fortune')
 
 const app = new Express()
 
@@ -13,11 +14,8 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
-const aboutArr = ['大象', '狮子', '老虎', '狐狸']
-
 app.get('/about', (req, res) => {
-  const type = aboutArr[Math.floor(Math.random() * aboutArr.length)]
-  res.render('about', { type })
+  res.render('about', { fortune: fortune.getFortune() })
 })
 
 app.use((req, res) => {
