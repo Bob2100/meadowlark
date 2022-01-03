@@ -7,6 +7,8 @@ app.engine('handlebars', handlebars.engine)
 app.set('port', process.env.port || 3000)
 app.set('view engine', 'handlebars')
 
+app.use(Express.static(`${__dirname}/public`))
+
 app.get('/', (req, res) => {
   res.render('home')
 })
