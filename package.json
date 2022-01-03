@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Bob2100/meadowlark#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express3-handlebars": "^0.5.2"
   }
 }
