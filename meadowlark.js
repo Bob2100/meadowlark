@@ -2,6 +2,16 @@ const Express = require('express')
 const app = new Express()
 
 app.set('port', process.env.port || 3000)
+
+app.get('/', (req, res)=> {
+  res.type('text/plain')
+  res.send('欢迎访问草地鹨旅行网')
+})
+app.get('/about',(req,res) => {
+  res.type('text/plain')
+  res.send('这是关于页面')
+})
+
 app.use((req, res) => {
   res.type('text/plain')
   res.status(404)
