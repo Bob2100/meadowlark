@@ -1,0 +1,22 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "草地鹨旅行社网站",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob2100/meadowlark.git"
+  },
+  "author": "bob.wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bob2100/meadowlark/issues"
+  },
+  "homepage": "https://github.com/Bob2100/meadowlark#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
