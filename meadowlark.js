@@ -12,8 +12,12 @@ app.use(Express.static(`${__dirname}/public`))
 app.get('/', (req, res) => {
   res.render('home')
 })
+
+const aboutArr = ['大象', '狮子', '老虎', '狐狸']
+
 app.get('/about', (req, res) => {
-  res.render('about')
+  const type = aboutArr[Math.floor(Math.random() * aboutArr.length)]
+  res.render('about', { type })
 })
 
 app.use((req, res) => {
