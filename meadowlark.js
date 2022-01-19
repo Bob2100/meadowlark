@@ -1,11 +1,13 @@
 const Express = require('express')
-const handlebars = require('express3-handlebars').create({ 'defaultLayout': 'main' })
+const handlebars = require('express3-handlebars').create({
+  defaultLayout: 'main',
+})
 const fortune = require('./lib/fortune')
 
 const app = new Express()
 
 app.engine('handlebars', handlebars.engine)
-app.set('port', process.env.port || 3000)
+app.set('port', process.env.port || 9000)
 app.set('view engine', 'handlebars')
 
 app.use(Express.static(`${__dirname}/public`))
@@ -30,5 +32,9 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(app.get('port'), () => {
-  console.log(`Express start on http://localhost:${app.get('port')}; press Ctrl-C to terminate.`)
+  console.log(
+    `Express start on http://localhost:${app.get(
+      'port'
+    )}; press Ctrl-C to terminate.`
+  )
 })
