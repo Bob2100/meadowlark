@@ -11,6 +11,11 @@ app.set('port', process.env.port || 9000)
 app.set('view engine', 'handlebars')
 
 app.use(Express.static(`${__dirname}/public`))
+app.use((req, res, next) => {
+  res.locals.showTests =
+    app.get('env') !== 'production' && req.query.test === '1'
+  next()
+})
 
 app.get('/', (req, res) => {
   res.render('home')
