@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about', {
     fortune: fortune.getFortune(),
-    pageTestScript: '/qa/tests-bout.js',
+    pageTestScript: '/qa/tests-about.js',
   })
 })
 
