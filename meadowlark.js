@@ -20,6 +20,12 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.render('home')
 })
+app.get('/tours/hood-river', (req, res) => {
+  res.render('tours/hood-river')
+})
+app.get('/tours/request-group-rate', (req, res) => {
+  res.render('tours/request-group-rate')
+})
 
 app.get('/about', (req, res) => {
   res.render('about', {
