@@ -24,9 +24,12 @@ suite('Cross-page Tests', function () {
     })
   })
   test('visiting the "request group rate" page directly should result in an empty referrer field', function (done) {
-    browser.visit('http://localhost:3000/tours/equest-group-rate', function () {
-      assert(browser.field('referrer').value === '')
-      done()
-    })
+    browser.visit(
+      'http://localhost:3000/tours/request-group-rate',
+      function () {
+        assert(browser.field('referrer').value === '')
+        done()
+      }
+    )
   })
 })
