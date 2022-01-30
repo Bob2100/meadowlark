@@ -18,6 +18,6 @@ module.exports = function (grunt) {
       linkchecker: { cmd: 'linkchecker http://localhost:3000' },
     },
   })
+  // 注册任务
+  grunt.registerTask('default', ['cafemocha', 'jshint', 'exec'])
 }
-// 注册任务
-grunt.registerTask('default', ['cafemocha', 'jshint', 'exec'])
